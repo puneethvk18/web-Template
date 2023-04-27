@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live Instructional Video</title>
+    <style>
+      /* Define the grid layout */
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+      }
+     
+      /* Style the video elements */
+      video {
+        width: 100%;
+        height: auto;
+      }
+     
+      /* Style the emotional status */
+      .status {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <!-- Live instructional video -->
+      <div>
+        <h2>Live Instructional Video</h2>
+        <video id="instructional-video" controls></video>
+      </div>
+     
+      <!-- Video of student listening -->
+      <div>
+        <h2>Live Video of Student Listening</h2>
+        <video id="student-video" controls></video>
+       
+        <!-- Emotional status -->
+        <div class="status">
+          <p>How are you feeling?</p>
+          <button id="happy-btn">😊 Happy</button>
+          <button id="neutral-btn">😐 Neutral</button>
+          <button id="sad-btn">😢 Sad</button>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Script to capture emotional status -->
+    <script>
+      const happyBtn = document.getElementById("happy-btn");
+      const neutralBtn = document.getElementById("neutral-btn");
+      const sadBtn = document.getElementById("sad-btn");
+      const status = document.querySelector(".status p");
+     
+      happyBtn.addEventListener("click", () => {
+        status.textContent = "You're feeling happy!";
+      });
+     
+      neutralBtn.addEventListener("click", () => {
+        status.textContent = "You're feeling neutral.";
+      });
+     
+      sadBtn.addEventListener("click", () => {
+        status.textContent = "You're feeling sad.";
+      });
+    </script>
+  </body>
+</html>
